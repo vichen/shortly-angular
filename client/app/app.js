@@ -10,11 +10,11 @@ angular.module('shortly', [
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
-    })
+    });
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
-    })
+    });
     // Your code here
 
     // We add our $httpInterceptor into the array

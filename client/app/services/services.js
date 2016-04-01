@@ -1,7 +1,19 @@
 angular.module('shortly.services', [])
 
-.factory('Links', function ($http) {
+// will changing this from .factory to .service
+// affect where it's passed in?
+.service('Links', function ($http) {
+  
+  this.getLink = function() {
+    return $http.get('/api/links/')
+  };
+
+
   // Your code here
+  // make $http call
+  // and save the allLinks data
+  // will also post new links
+  // use Links.getLinks in ctrl
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
