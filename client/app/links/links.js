@@ -2,10 +2,10 @@ angular.module('shortly.links', ['shortly.services'])
 
 .controller('LinksController', function ($scope, Links) {
   $scope.data = {};
-  $scope.data.links;
+  // $scope.data.links;
   Links.getAll()
     .then(function(response) {
-      $scope.data.links = response;
+      $scope.data = response;
     });
 });
 

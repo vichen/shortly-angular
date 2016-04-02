@@ -25,3 +25,7 @@ module.exports = function (app, express) {
   app.use(bodyParser.json());
   app.use(express.static(__dirname + '/../../client'));
 };
+
+/* 
+  pass in an object with url: link to the data prop
+*/

@@ -1,7 +1,5 @@
 angular.module('shortly.services', [])
 
-// will changing this from .factory to .service
-// affect where it's passed in?
 .factory('Links', function ($http) {
   
   var getAll = function() {
@@ -16,40 +14,30 @@ angular.module('shortly.services', [])
       });
   };
 
-// var signin = function (user) {
-//     return $http({
-//       method: 'POST',
-//       url: '/api/users/signin',
-//       data: user
-//     })
-//     .then(function (resp) {
-//       return resp.data.token;
-//     });
-//   };
-
-
   var addOne = function(link) {
-    return $http.post('/api/links', link)
-      .then(function(response) {
-        console.log('POST response: ', response);
-        return response;
-      })
-      .catch(function(err) {
-        console.log('addLink error: ', err);
-      });
+
+    console.log('addOne, link: ', link);
+
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link // { url: link } ?
+    });
+      //'/api/links', { url: link })
+    //   .then(function(response) {
+    //     return response;
+    //   });
   };
 
   return {
     getAll: getAll,
     addOne: addOne
   };
-
-  // Your code here
-  // make $http call
-  // and save the allLinks data
-  // will also post new links
-  // use Links.getLinks in ctrl
 })
+
+
+
+
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user

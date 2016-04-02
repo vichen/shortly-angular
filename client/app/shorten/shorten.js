@@ -4,8 +4,9 @@ angular.module('shortly.shorten', ['shortly.services'])
   // $scope.newLink = '';
   $scope.link = {};
   $scope.addLink = function() {
-    Links.addOne($scope.newLink);    
+    console.log('link: ', $scope.linkInput);
+    Links.addOne(JSON.stringify(
+      {url: $scope.linkInput}
+      ));
   };
-  
-  // do we need to use $location
 });
