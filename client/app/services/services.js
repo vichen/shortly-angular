@@ -4,8 +4,26 @@ angular.module('shortly.services', [])
 // affect where it's passed in?
 .service('Links', function ($http) {
   
-  this.getLink = function() {
-    return $http.get('/api/links/')
+  this.getAll = function() {
+    return $http.get('/api/links')
+      .then(function(response) {
+        console.log('GET response: ', response);
+        return response.data;
+      })
+      .catch(function(err) {
+        console.log('getLink error: ', err);
+      });
+  };
+
+  this.addOne = function(link) {
+    return $http.post('/api/links', link)
+      .then(function(response) {
+        console.log('POST response: ', response);
+        return response;
+      })
+      .catch(function(err) {
+        console.log('addLink error: ', err);
+      });
   };
 
 
