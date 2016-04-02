@@ -1,7 +1,17 @@
 <div ng-controller="ShortenController" id='shorten'>
 <!-- Your code here -->
   <h1>Add a link</h1>
-  <input ng-model='linkInput'>
+
+  <form name="myForm">
+    <input type="url" name="myInput" ng-model='linkInput' required>
+  </form>
+
+  <div role="alert">
+    <span class="error" ng-show="myForm.myInput.$error.required">
+    Required!</span>
+    <span class="error" ng-show="myForm.myInput.$error.url">
+    Not a valid url!</span>
+  </div>
 
   <button ng-click='addLink(linkInput)'>Add</button>
 

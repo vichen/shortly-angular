@@ -5,24 +5,16 @@
       <a href="/{{ link.code }}">
         {{ link.title }}
       </a>
-      <span> Shortened Url: localhost:3000/{{link.code}} </span>
+      <br>
+      <span> 
+        Shortened Url: localhost:3000/{{link.code}} 
+      </span>
+      <br>
       <span>
         Visits: {{ link.visits }}
       </span>
     </li>
   </ul>
-  <p>{{data}}</p>
+<!--   <p>{{data}}</p> -->
 </div>
 
-
-
-
-<!-- <script id='link' type='text/x-handlebars-template'>
-  <img src='/redirect_icon.png'/>
-  <div class='info'>
-    <div class='visits'><span class='count'>{{visits}}</span>Visits</div>
-    <div class='title'>{{title}}</div>
-    <div class='original'>{{url}}</div>
-    <a href='{{baseUrl}}/{{code}}'>{{baseUrl}}/{{code}}</a>
-  </div>
-</script> -->

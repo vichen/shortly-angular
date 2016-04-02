@@ -1,13 +1,12 @@
 angular.module('shortly.links', ['shortly.services'])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, Auth) {
   $scope.data = {};
-  // $scope.data.links;
-  Links.getAll()
-    .then(function(response) {
-      $scope.data = response;
-    });
+  if (Auth.isAuth) {
+    Links.getAll()
+      .then(function(response) {
+        $scope.data = response;
+      });
+    
+  }
 });
-
-// is test doing a fake GET with
-// ... what is .respond? [{}, {}, {}];

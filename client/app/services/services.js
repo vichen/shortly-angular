@@ -69,6 +69,9 @@ angular.module('shortly.services', [])
   };
 
   var isAuth = function () {
+
+  console.log('in isAuth');
+
     return !!$window.localStorage.getItem('com.shortly');
   };
 

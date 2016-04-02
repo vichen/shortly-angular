@@ -23,6 +23,11 @@ angular.module('shortly', [
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
+    .when('/signout', {
+      // destroy that token
+      // redirect to signin
+
+    })
     .otherwise({
       redirectTo: '/signin'
     });
