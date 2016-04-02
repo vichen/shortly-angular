@@ -1,11 +1,11 @@
 <div ng-controller="ShortenController" id='shorten'>
 <!-- Your code here -->
   <h1>Add a link</h1>
-  <input ng-model='link'>
+  <input ng-model='link' ng-init="">
 
   <button ng-click='addLink(link)'>Add</button>
 
-  <div>{{newLink}}</div>
+  <div>{{link}}</div>
 </div>
 
 

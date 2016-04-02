@@ -2,12 +2,13 @@ angular.module('shortly.services', [])
 
 // will changing this from .factory to .service
 // affect where it's passed in?
-.service('Links', function ($http) {
+.factory('Links', function ($http) {
   
-  this.getAll = function() {
+  var getAll = function() {
+
     return $http.get('/api/links')
       .then(function(response) {
-        console.log('GET response: ', response);
+        console.log('GET response: ', response.data);
         return response.data;
       })
       .catch(function(err) {
@@ -15,7 +16,19 @@ angular.module('shortly.services', [])
       });
   };
 
-  this.addOne = function(link) {
+// var signin = function (user) {
+//     return $http({
+//       method: 'POST',
+//       url: '/api/users/signin',
+//       data: user
+//     })
+//     .then(function (resp) {
+//       return resp.data.token;
+//     });
+//   };
+
+
+  var addOne = function(link) {
     return $http.post('/api/links', link)
       .then(function(response) {
         console.log('POST response: ', response);
@@ -26,6 +39,10 @@ angular.module('shortly.services', [])
       });
   };
 
+  return {
+    getAll: getAll,
+    addOne: addOne
+  };
 
   // Your code here
   // make $http call
