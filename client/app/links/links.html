@@ -1,7 +1,7 @@
 <div id='links'>
 
   <ul ng-controller="LinksController">
-    <li ng-repeat="link in data">
+    <li ng-repeat="link in data.reverse() | orderBy: 'visits' ">
       <a href="/{{ link.code }}">
         {{ link.title }}
       </a>
